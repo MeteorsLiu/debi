@@ -106,6 +106,7 @@ Otherwise, you can run this command to revert all changes made by the script:
  * `--dns '8.8.8.8 8.8.4.4'` (Default IPv6 DNS: `2001:4860:4860::8888 2001:4860:4860::8844`)
  * `--hostname <string>` FQDN hostname (includes the domain name), e.g. `server1.example.com`
  * `--network-console` Enable the network console of the installer. `ssh installer@ip` to connect
+ * `--temp /boot` Change the temporary compressed file download dir
  * `--version 11` Supports: `9`, `10`, `11`, `12`
  * `--suite bullseye` **For normal cases, please use `--version` instead.** e.g. `stable`, `testing`, `sid`
  * `--release-d-i` d-i (Debian Installer) for the released versions: 11 (bullseye), 10 (buster) and 9 (stretch)
