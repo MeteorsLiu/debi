@@ -238,6 +238,7 @@ firmware=false
 force_efi_extra_removable=true
 grub_timeout=5
 dry_run=false
+temp_download_dir='/boot'
 
 while [ $# -gt 0 ]; do
     case $1 in
@@ -431,6 +432,10 @@ while [ $# -gt 0 ]; do
             grub_timeout=$2
             shift
             ;;
+        --temp_download_dir)
+            temp_download_dir=$2
+            shift
+            ;;
         --dry-run)
             dry_run=true
             ;;
@@ -468,7 +473,7 @@ done
 [ -n "$authorized_keys_url" ] && ! download "$authorized_keys_url" /dev/null &&
 err "Failed to download SSH authorized public keys from \"$authorized_keys_url\""
 
-installer_directory="/boot/debian-$suite"
+installer_directory="$temp_download_dir/debian-$suite"
 
 save_preseed='cat'
 [ "$dry_run" = false ] && {
