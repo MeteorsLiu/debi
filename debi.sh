@@ -432,7 +432,7 @@ while [ $# -gt 0 ]; do
             grub_timeout=$2
             shift
             ;;
-        --temp_download_dir)
+        --temp)
             temp_download_dir=$2
             shift
             ;;
